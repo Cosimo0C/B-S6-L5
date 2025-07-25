@@ -1,9 +1,6 @@
 package cosimocrupi.L5.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,6 +22,10 @@ public class Reservation {
     private LocalDate dateRequest;
     private String noteOrPreferences;
     private String employeeId;
+
+    @OneToOne
+    @JoinColumn(name = "travel_id")
+    private Travel travel;
 
     public Reservation(LocalDate dateRequest, String noteOrPreferences, String employeeId) {
         this.dateRequest = dateRequest;
