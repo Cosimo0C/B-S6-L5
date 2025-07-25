@@ -6,9 +6,7 @@ import cosimocrupi.L5.entities.Employee;
 import cosimocrupi.L5.exceptions.BadRequestException;
 import cosimocrupi.L5.exceptions.NotFoundException;
 import cosimocrupi.L5.payloads.EmployeeDTO;
-import cosimocrupi.L5.payloads.EmployeeRespDTO;
 import cosimocrupi.L5.repositories.EmployeeRepository;
-import cosimocrupi.L5.repositories.ReservationRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,8 +22,7 @@ import java.util.UUID;
 public class EmployeeService {
     @Autowired
     EmployeeRepository employeeRepository;
-    @Autowired
-    ReservationRepository reservationRepository;
+
     @Autowired
     Cloudinary imageUp;
 
