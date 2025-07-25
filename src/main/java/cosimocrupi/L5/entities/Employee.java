@@ -13,7 +13,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @ToString
-public class Employye {
+public class Employee {
     @Id
     @GeneratedValue
     @Setter(AccessLevel.NONE)
@@ -22,12 +22,13 @@ public class Employye {
     private String name;
     private String surname;
     private String email;
+    private String avatarUrl;
 
     @OneToOne
     @JoinColumn(name = "reservation_id")
     private Reservation reservation;
 
-    public Employye(String username, String name, String surname, String email) {
+    public Employee(String username, String name, String surname, String email) {
         this.username = username;
         this.name = name;
         this.surname = surname;
